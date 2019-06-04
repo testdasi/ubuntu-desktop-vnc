@@ -36,16 +36,16 @@ ENV HOME=/headless \
 WORKDIR $HOME
 
 ### Add all install scripts for further steps
-ADD ./src/common/install/ $INST_SCRIPTS/
-ADD ./src/ubuntu/install/ $INST_SCRIPTS/
+ADD ./install/ $INST_SCRIPTS/
 RUN find $INST_SCRIPTS -name '*.sh' -exec chmod a+x {} +
 
-### Install some common tools
-RUN $INST_SCRIPTS/tools.sh
-ENV LANG='en_US.UTF-8' LANGUAGE='en_US:en' LC_ALL='en_US.UTF-8'
+### Install prerequisites and set language to UK because I'm posh like that
+RUN $INST_SCRIPTS/prerequisite.sh
+ENV LANG='en_GB.UTF-8' LANGUAGE='en_GB:en' LC_ALL='en_GB.UTF-8'
 
-### Install custom fonts
-RUN $INST_SCRIPTS/install_custom_fonts.sh
+### Install desktop GUI
+RUN $INST_SCRIPTS/desktopgui.sh
+ADD ./src/common/xfce/ $HOME/
 
 ### Install xvnc-server & noVNC - HTML5 based VNC viewer
 RUN $INST_SCRIPTS/tigervnc.sh
@@ -54,10 +54,6 @@ RUN $INST_SCRIPTS/no_vnc.sh
 ### Install firefox and chrome browser
 RUN $INST_SCRIPTS/firefox.sh
 RUN $INST_SCRIPTS/chrome.sh
-
-### Install xfce UI
-RUN $INST_SCRIPTS/xfce_ui.sh
-ADD ./src/common/xfce/ $HOME/
 
 ### Install TOR
 RUN $INST_SCRIPTS/tor.sh
