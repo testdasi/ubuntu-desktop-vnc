@@ -50,9 +50,6 @@ RUN $INST_SCRIPTS/postsscript.sh
 ADD ./startup/ $STARTUPDIR
 RUN $INST_SCRIPTS/set_user_permission.sh $STARTUPDIR $HOME
 
-### Tor key
-RUN gpg --homedir "$HOME/.local/share/torbrowser/gnupg_homedir" --refresh-keys --keyserver keyserver.ubuntu.com
-
 USER 1000
 
 ENTRYPOINT ["/dockerstartup/vnc_startup.sh"]
