@@ -9,10 +9,7 @@ echo "
 USAGE:
 docker run -it -p 6901:6901 -p 5901:5901 consol/<image>:<tag> <option>
 IMAGES:
-consol/ubuntu-xfce-vnc
-consol/centos-xfce-vnc
-consol/ubuntu-icewm-vnc
-consol/centos-icewm-vnc
+testdasi/ubuntu-desktop-vnc
 TAGS:
 latest  stable version of branch 'master'
 dev     current development version of branch 'dev'
@@ -23,7 +20,7 @@ OPTIONS:
 -d, --debug     enables more detailed startup output
                 e.g. 'docker run consol/centos-xfce-vnc --debug bash'
 -h, --help      print out this help
-Fore more information see: https://github.com/ConSol/docker-headless-vnc-container
+Fore more information see: https://github.com/testdasi/ubuntu-desktop-vnc
 "
 }
 if [[ $1 =~ -h|--help ]]; then
