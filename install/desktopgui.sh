@@ -5,7 +5,10 @@ set -e
 echo "Install default Ubuntu Desktop"
 
 ### Install default ubuntu desktop experience
-tasksel install ubuntu-desktop
+apt-get update 
+apt-get install -y --no-install-recommends ubuntu-desktop
+# tasksel install ubuntu-desktop
+# tasksel install ubuntu-desktop --no-install-recommends
 
 ### Start GNOME session?
 #service gdm3 start
