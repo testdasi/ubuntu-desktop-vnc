@@ -55,14 +55,7 @@ RUN $INST_SCRIPTS/libnss_wrapper.sh
 ADD ./startup/ $STARTUPDIR
 RUN $INST_SCRIPTS/set_user_permission.sh $STARTUPDIR $HOME
 
-### Clean up
-RUN apt-mark hold firefox
-RUN apt-get update -y
-RUN apt-get upgrade -y
-RUN apt-get dist-upgrade -y
-RUN apt-get clean -y
-RUN apt-get autoclean -y
-RUN apt-get autoremove -y
+### Tor key
 RUN gpg --homedir "$HOME/.local/share/torbrowser/gnupg_homedir" --refresh-keys --keyserver keyserver.ubuntu.com
 
 USER 1000
