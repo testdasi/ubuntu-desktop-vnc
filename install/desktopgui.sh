@@ -2,6 +2,8 @@
 ### every exit != 0 fails the script
 set -e
 
+echo "Install default Ubuntu Desktop"
+
 ### Install default ubuntu desktop experience
 tasksel install ubuntu-desktop
 
