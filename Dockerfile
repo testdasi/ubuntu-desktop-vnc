@@ -45,7 +45,6 @@ ENV LANG='en_GB.UTF-8' LANGUAGE='en_GB:en' LC_ALL='en_GB.UTF-8'
 
 ### Install desktop GUI
 RUN $INST_SCRIPTS/desktopgui.sh
-ADD ./src/common/xfce/ $HOME/
 
 ### Install apps
 RUN $INST_SCRIPTS/apps.sh
