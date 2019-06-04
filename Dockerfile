@@ -50,7 +50,7 @@ RUN $INST_SCRIPTS/desktopgui.sh
 RUN $INST_SCRIPTS/apps.sh
 
 ### configure startup
-RUN $INST_SCRIPTS/libnss_wrapper.sh
+RUN $INST_SCRIPTS/postsscript.sh
 ADD ./startup/ $STARTUPDIR
 RUN $INST_SCRIPTS/set_user_permission.sh $STARTUPDIR $HOME
 
