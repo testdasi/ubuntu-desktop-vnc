@@ -8,10 +8,10 @@ echo "add 'source generate_container_user' to .bashrc"
 echo 'source $STARTUPDIR/generate_container_user' >> $HOME/.bashrc
 
 echo "Apt Cleanup"
-RUN apt-get update -y
-RUN apt-get upgrade -y
-RUN apt-get dist-upgrade -y
-RUN apt-get clean -y
-RUN apt-get autoclean -y
-RUN apt-get autoremove -y
+apt-get update -y
+apt-get upgrade -y
+apt-get dist-upgrade -y
+apt-get clean -y
+apt-get autoclean -y
+apt-get autoremove -y
 
