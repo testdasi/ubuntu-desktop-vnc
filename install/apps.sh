@@ -5,8 +5,8 @@ set -u
 
 ### TigerVNC
 echo "Install TigerVNC server"
-# wget -qO- https://dl.bintray.com/tigervnc/stable/tigervnc-1.9.0.x86_64.tar.gz | tar xz --strip 1 -C /
-apt install tigervnc-standalone-server tigervnc-xorg-extension tigervnc-viewer
+wget -qO- https://dl.bintray.com/tigervnc/stable/tigervnc-1.9.0.x86_64.tar.gz | tar xz --strip 1 -C /
+# apt install -y tigervnc-standalone-server tigervnc-xorg-extension tigervnc-viewer
 
 ### noVNC
 echo "Install noVNC - HTML5 based VNC viewer"
