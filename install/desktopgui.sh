@@ -11,6 +11,6 @@ apt-get install -y --no-install-recommends ubuntu-desktop
 # tasksel install ubuntu-desktop --no-install-recommends
 
 ### Start GNOME session?
-#service gdm3 start
-systemctl enable gdm3
-systemctl start gdm3
+service gdm3 start
+#systemctl enable gdm
+#systemctl start gdm
