@@ -92,7 +92,11 @@ echo -e "start vncserver with param: VNC_COL_DEPTH=$VNC_COL_DEPTH, VNC_RESOLUTIO
 if [[ $DEBUG == true ]]; then echo "vncserver $DISPLAY -depth $VNC_COL_DEPTH -geometry $VNC_RESOLUTION"; fi
 vncserver $DISPLAY -depth $VNC_COL_DEPTH -geometry $VNC_RESOLUTION &> $STARTUPDIR/no_vnc_startup.log
 echo -e "start window manager\n..."
-$HOME/wm_startup.sh &> $STARTUPDIR/wm_startup.log
+
+### testdasi: Originall call a wm_startup.sh script for xfce
+#$HOME/wm_startup.sh &> $STARTUPDIR/wm_startup.log
+### now call gdm3
+service gdm3 start
 
 ## log connect options
 echo -e "\n\n------------------ VNC environment started ------------------"
